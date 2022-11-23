@@ -8,7 +8,7 @@ export const SearchResult = (props) => {
                 <table id="result_table">
                     <tr>
                         <th><img src={props.plantImgUrl}></img></th>
-                        <td>{props.plantNameKR} / {props.plantNameEN}</td>
+                        <td>{props.plantNameKR} / <i>{props.plantNameEN}</i></td>
                     </tr>
                 </table>
             </li>

@@ -1,16 +1,13 @@
-import Main from "../main/main";
 import SearchResult from "../../component/searchResult";
+import { useState } from "react";
 import "./showSearchList.css"
 
-export const ShowSearchList=()=>{
-    sessionStorage.setItem("Logined","Login");
-
-    const results = [];
-    const resultList = results.map(v => (<SearchResult plantNameKR={v.plantNameKR} plantNameEN={v.plantNameEN} plantImgUrl={v.plantImgUrl}/>));
+export const ShowSearchList=(prop)=>{
+    const [resultData,setResultData]=useState([]);
+    console.log(prop);
+    const resultList = prop.data.map(result => (<SearchResult plantNameKR={result.plantNameKR} plantNameEN={result.plantNameEN} plantImgUrl={result.plantImgUrl}/>));
     return (
         <div>
-            <Main></Main>
-
             <div id="result_div">
                 <p>결과</p>
                 <hr></hr>
@@ -21,8 +18,6 @@ export const ShowSearchList=()=>{
             </div>
         </div>
     );
-    
-
 }
 
 export default ShowSearchList;
