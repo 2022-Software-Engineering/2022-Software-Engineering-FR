@@ -34,6 +34,7 @@ export const Main=()=>{
             <div>
                 <Header></Header>
             </div>
+
             <div id="search_div">
                 <p>검색</p>
                 <hr></hr>
@@ -42,6 +43,7 @@ export const Main=()=>{
                     <tr>
                         <th>
                             <select name="searchType" onChange={(e)=>setSearchType(e.target.value)}>
+
                                 <option value="sCntntsSj">식물명(한국어)</option>
                                 <option value="sScnm">식물명(영어)</option>
                             </select>
@@ -49,6 +51,7 @@ export const Main=()=>{
                         <td>
                             <input type="text" name="searchWord" id="searchWord" onChange={(e)=>setSearchWord(e.target.value)}></input>
                             <input type="button" name="search_btn" id="search_btn" value="검색" onClick={handleSearchBtn}></input>
+
                         </td>
                     </tr>
 
@@ -62,6 +65,7 @@ export const Main=()=>{
                             <input type="radio" name="growRate" id="growRate_common" value="407002" onClick={(e)=>setGrowRate(e.target.value)}></input>
                             <label from="growRate_common">보통  </label>
                             <input type="radio" name="growRate" id="growRate_fast" value="407003" onClick={(e)=>setGrowRate(e.target.value)}></input>
+
                             <label from="growRate_fast">빠름  </label>
                         </td>
                     </tr>
@@ -80,6 +84,7 @@ export const Main=()=>{
                             <input type="radio" name="manageLevel" id="manageLevel_difficulty" value="408005" onClick={(e)=>setManageLevel(e.target.value)}></input>
                             <label from="manageLevel_difficulty">어려움  </label>
                             <input type="radio" name="manageLevel" id="manageLevel_very_difficulty" value="408002" onClick={(e)=>setManageLevel(e.target.value)}></input>
+
                             <label from="manageLevel_very_difficulty">매우 어려움  </label>
                         </td>
                     </tr>
@@ -94,6 +99,7 @@ export const Main=()=>{
                             <input type="radio" name="manageDemand" id="manageDemand_middle" value="409002" onClick={(e)=>setManageDemand(e.target.value)}></input>
                             <label from="manageDemand_middle">잘 견딤  </label>
                             <input type="radio" name="manageDemand" id="manageDemand_high" value="409003" onClick={(e)=>setManageDemand(e.target.value)}></input>
+
                             <label from="manageDemand_high">필요함  </label>
                         </td>
                     </tr>
@@ -102,6 +108,7 @@ export const Main=()=>{
             <div>
                 <ShowSearchList data ={searchResult} ></ShowSearchList>
             </div>
+
         </div>
     );
     
