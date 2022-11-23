@@ -1,5 +1,5 @@
-import Main from "./main";
-import SearchResult from "../component/searchResult";
+import Main from "../main/main";
+import SearchResult from "../../component/searchResult";
 import "./showSearchList.css"
 
 export const ShowSearchList=()=>{
