@@ -2,6 +2,7 @@ import Header from "../../component/header";
 import "./showDetails.css"
 
 export const ShowDetails=()=>{
+
     return (
         <div>
             <Header></Header>
@@ -170,6 +171,7 @@ export const ShowDetails=()=>{
                     </div>
 
                 </div>
+
             </div>
         </div>
     );

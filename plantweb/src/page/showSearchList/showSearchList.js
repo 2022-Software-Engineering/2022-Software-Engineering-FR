@@ -8,6 +8,7 @@ export const ShowSearchList=(prop)=>{
     const resultList = prop.data.map(result => (<SearchResult plantNameKR={result.plantNameKR} plantNameEN={result.plantNameEN} plantImgUrl={result.plantImgUrl}/>));
     return (
         <div>
+
             <div id="result_div">
                 <p>결과</p>
                 <hr></hr>
@@ -18,6 +19,7 @@ export const ShowSearchList=(prop)=>{
             </div>
         </div>
     );
+
 }
 
 export default ShowSearchList;
