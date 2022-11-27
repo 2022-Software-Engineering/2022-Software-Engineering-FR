@@ -6,6 +6,7 @@ import {Login} from "./page/login/login";
 import {Main} from "./page/main/main";
 import {ShowSearchList} from "./page/showSearchList/showSearchList"
 import {ShowDetails} from "./page/showDetails/showDetails"
+import {MyPage} from "./page/myPage/myPage"
 
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -18,6 +19,7 @@ const Router = () => {
            <Route exact path="/login" element ={<Login/>} />
            <Route exact path="/searchList" element ={<ShowSearchList/>} />
            <Route exact path="/details" element ={<ShowDetails/>} />
+           <Route exact path="/myPage" element ={<MyPage/>} />
         </Routes>
      </BrowserRouter>
   );

@@ -5,10 +5,10 @@ table, td, th{
 
 
 
-#search_div{
+#interestList_div{
     position: absolute;
     left: 50%;
-    top: 25%;
+    top: 35%;
     transform: translate(-50%, -50%);
 }
 
@@ -19,18 +19,7 @@ hr{
     background: black;
 }
 
-#search_table{
-    width: 1200px;
-}
-
 p{
     font-size:x-large;
     margin-bottom: 10px;
-}
-
-#searchList_div{
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
 }

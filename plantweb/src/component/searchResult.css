@@ -5,17 +5,28 @@ table, td, th{
 
 #result_table{
     width: 900px;
+    height: 200px;
+    text-align: center;
 }
 
 th{
-    width: 250px;
+    width: 200px;
 }
 
 td{
-    width: 650px;
+    width: 700px;
 }
 
 p{
     font-size:x-large;
     margin-bottom: 10px;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+}
+
+li{
+    list-style:none;
 }

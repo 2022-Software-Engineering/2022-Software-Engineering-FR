@@ -13,27 +13,50 @@ export const Main=()=>{
 
     const [searchResult,setSearchResult]=useState([]);
 
+    // const handleSearchBtn =()=>{
+    //     axios.get("localhose:8080",{
+    //             'searchType':searchType, 
+    //             'searchWord' : searchWord,
+    //             'growRate': growRate,
+    //             'manageLevel' : manageLevel ,
+    //             'manageDemand': manageDemand
+    //     }).then(v=>{
+    //         setSearchResult(v.data);
+    //     },
+    //     e=>{
+    //         alert("서버 장애");
+    //     })
+    // }
+
     const handleSearchBtn =()=>{
-        axios.get("localhose:8080",{
-                'searchType':searchType, 
-                'searchWord' : searchWord,
-                'growRate': growRate,
-                'manageLevel' : manageLevel ,
-                'manageDemand': manageDemand
-        }).then(v=>{
-            setSearchResult(v.data);
-        },
-        e=>{
-            alert("서버 장애");
-        })
+        setSearchResult([
+            {
+                "plantID": "204870",
+                "plantNameKR": "페페로미아 그라베올렌스",
+                "plantNameEN": "<i>Peperomia graveolens</i>",
+                "plantImgUrl": "http://www.nongsaro.go.kr/cms_contents/1122/204870_MF_BIMG_01.jpg"
+            },
+            {
+                "plantID": "204865",
+                "plantNameKR": "사마로",
+                "plantNameEN": "<i>Sinocrassula yunnanensis</i>",
+                "plantImgUrl": "http://www.nongsaro.go.kr/cms_contents/1122/204865_MF_BIMG_01.jpg"
+            },
+            {
+                "plantID": "204858",
+                "plantNameKR": "자보",
+                "plantNameEN": "<i>Gasteria gracilis</i> var. <i>minima</i>",
+                "plantImgUrl": "http://www.nongsaro.go.kr/cms_contents/1122/204858_MF_BIMG_01.jpg"
+            }
+        ]);
     }
 
-    
     return (
         <div>
-            <div>
+            <div id="header_div">
                 <Header></Header>
             </div>
+
             <div id="search_div">
                 <p>검색</p>
                 <hr></hr>
@@ -99,9 +122,10 @@ export const Main=()=>{
                     </tr>
                 </table>
             </div>
-            <div>
+            <div id="searchList_div">
                 <ShowSearchList data ={searchResult} ></ShowSearchList>
             </div>
+
         </div>
     );
     

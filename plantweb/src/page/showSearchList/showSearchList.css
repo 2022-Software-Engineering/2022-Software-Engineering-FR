@@ -1,6 +1,16 @@
-#result_div{
+ #result_div{
+    position: relative;
+}
+
+ul{
     position: absolute;
     left: 50%;
-    top: 45%;
+    top: 60%;
     transform: translate(-50%, -50%);
+}
+.resultTable_div{
+    /* top:30% */
+}
+.resultTableUl_div{
+    top:550%
 }

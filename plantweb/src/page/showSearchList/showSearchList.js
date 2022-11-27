@@ -3,7 +3,6 @@ import { useState } from "react";
 import "./showSearchList.css"
 
 export const ShowSearchList=(prop)=>{
-    const [resultData,setResultData]=useState([]);
     console.log(prop);
     const resultList = prop.data.map(result => (<SearchResult plantNameKR={result.plantNameKR} plantNameEN={result.plantNameEN} plantImgUrl={result.plantImgUrl}/>));
     return (
@@ -12,12 +11,15 @@ export const ShowSearchList=(prop)=>{
                 <p>결과</p>
                 <hr></hr>
                 
-                <ul>
+            </div>
+            <div className="resultTable_div">
+                <ul className="resultTableUl_div">
                     {resultList}
                 </ul>
             </div>
+            
         </div>
     );
 }
 
-export default ShowSearchList;
+export default ShowSearchList
