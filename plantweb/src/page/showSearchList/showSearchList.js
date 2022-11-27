@@ -1,4 +1,5 @@
 import SearchResult from "../../component/searchResult";
+import { useState } from "react";
 import "./showSearchList.css"
 
 export const ShowSearchList=(prop)=>{
