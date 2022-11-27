@@ -5,11 +5,6 @@ import axios from "axios";
 import "./myPage.css"
 
 export const MyPage=()=>{
-    const [searchType,setSearchType]=useState("");
-    const [searchWord,setSearchWord]=useState("");
-    const [growRate,setGrowRate]=useState("");
-    const [manageLevel,setManageLevel]=useState("");
-    const [manageDemand,setManageDemand]=useState("");
 
     const [searchResult,setSearchResult]=useState([]);
 
@@ -42,11 +37,10 @@ export const MyPage=()=>{
                 <Header></Header>
             </div>
 
-            <div>
-                <p>user_name 님의 관심 식물 리스트</p>
-                <input type="button" value="결과리스트보이기" onClick={handleSearchBtn}></input>
+            <div className="title_div">
+                <p className="myPageTitle">{sessionStorage.getItem("userID")} 님의 관심 식물 리스트</p>
+                {/* <input type="button" value="결과리스트보이기" onClick={handleSearchBtn}></input> */}
             </div>
-            <div><hr></hr></div>
             <div><br></br></div> 
             <div id="interestList_div">
                 
