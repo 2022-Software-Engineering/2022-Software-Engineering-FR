@@ -1,6 +1,7 @@
 import { useNavigate} from 'react-router-dom';
 import {useState, useEffect} from "react"
 import Logo from "../images/Logo.png";
+import UserIcon from"../images/user_icon.png";
 import "./header.css"
 
 
@@ -29,12 +30,12 @@ export const Header = () => {
 
     return (
         <div id ="header_div">
-            <div id="logo_div">
-            <img id="logoImg" alt="logo" src={Logo} />
+            <div className="logo_div">
+                <img className="logoImg" alt="logo" src={Logo} />
             </div>
-            <div id="space_div"></div>
+            <div id="space_div"><span></span></div>
             <div id="btn_div"><button id="btn_moveToLogin" onClick ={LoginOrOut}>{buttonText}</button></div>
-            <div id="myPage_div" onClick={movemyPage}>UserImg</div>
+            <div id="myPage_div" onClick={movemyPage}><img className="userIconImg" alt="logo" src={UserIcon} /></div>
         </div>
     );
 }

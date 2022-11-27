@@ -5,7 +5,7 @@ table, td, th{
 
 
 
-#search_div{
+#interestList_div{
     position: absolute;
     left: 50%;
     top: 35%;
@@ -19,18 +19,7 @@ hr{
     background: black;
 }
 
-#search_table{
-    width: 1200px;
-}
-
 p{
     font-size:x-large;
     margin-bottom: 10px;
-}
-
-#searchList_div{
-    position: absolute;
-    left: 50%;
-    top: 55%;
-    transform: translate(-50%, -50%);
 }

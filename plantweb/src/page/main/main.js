@@ -29,7 +29,6 @@ export const Main=()=>{
     // }
 
     const handleSearchBtn =()=>{
-        
         setSearchResult([
             {
                 "plantID": "204870",
@@ -50,13 +49,14 @@ export const Main=()=>{
                 "plantImgUrl": "http://www.nongsaro.go.kr/cms_contents/1122/204858_MF_BIMG_01.jpg"
             }
         ]);
-}
+    }
 
     return (
         <div>
-            <div>
+            <div id="header_div">
                 <Header></Header>
             </div>
+
             <div id="search_div">
                 <p>검색</p>
                 <hr></hr>
@@ -122,9 +122,10 @@ export const Main=()=>{
                     </tr>
                 </table>
             </div>
-            <div>
+            <div id="searchList_div">
                 <ShowSearchList data ={searchResult} ></ShowSearchList>
             </div>
+
         </div>
     );
     
