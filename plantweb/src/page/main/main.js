@@ -5,7 +5,7 @@ import axios from "axios";
 import "./main.css"
 
 export const Main=()=>{
-    const [searchType,setSearchType]=useState("");
+    const [searchType,setSearchType]=useState("sCntntsSj");
     const [searchWord,setSearchWord]=useState("");
     const [growRate,setGrowRate]=useState("");
     const [manageLevel,setManageLevel]=useState("");
@@ -29,6 +29,11 @@ export const Main=()=>{
     // }
 
     const handleSearchBtn =()=>{
+        console.log('searchType : ',searchType, 
+                    '\nsearchWord : ' , searchWord,
+                    '\ngrowRate : ', growRate,
+                    '\nmanageLevel : ' , manageLevel ,
+                    '\nmanageDemand : ' , manageDemand)
         setSearchResult([
             {
                 "plantID": "204870",
@@ -58,7 +63,7 @@ export const Main=()=>{
             </div>
 
             <div id="search_div">
-                <p>검색</p>
+                <p>검색 🔍</p>
                 <hr></hr>
                 <br></br>
                 <table id="search_table">

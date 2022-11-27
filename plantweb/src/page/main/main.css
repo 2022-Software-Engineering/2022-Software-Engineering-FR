@@ -1,6 +1,7 @@
 table, td, th{
     border: 1px solid black;
     border-collapse: collapse;
+    font-size: large;
 }
 
 
@@ -8,7 +9,7 @@ table, td, th{
 #search_div{
     position: absolute;
     left: 50%;
-    top: 25%;
+    top: 30%;
     transform: translate(-50%, -50%);
 }
 
@@ -31,6 +32,6 @@ p{
 #searchList_div{
     position: absolute;
     left: 50%;
-    top: 40%;
+    top: 46%;
     transform: translate(-50%, -50%);
 }
