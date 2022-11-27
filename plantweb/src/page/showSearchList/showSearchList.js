@@ -20,4 +20,4 @@ export const ShowSearchList=(prop)=>{
     );
 }
 
-export default ShowSearchList;
+export default ShowSearchList
