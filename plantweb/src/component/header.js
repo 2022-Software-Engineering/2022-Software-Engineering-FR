@@ -10,7 +10,6 @@ export const Header = () => {
     const navigate = useNavigate();
     const [isLoaded,setIsLoaded]=useState(false);
     const [buttonText,setButtonText]=useState("");
-    // const buttonText=sessionStorage.getItem("userID") == null? "LOGIN" : "LOGOUT";
 
     useEffect(()=>{
         setButtonText(sessionStorage.getItem("userID") == null? "LOGIN" : "LOGOUT");
@@ -24,18 +23,23 @@ export const Header = () => {
             sessionStorage.clear();
         }
     }
-    const movemyPage =() => {
+    const moveToMyPage =() => {
         navigate('/myPage');
+    }
+    const moveToMain =() => {
+        navigate('/');
     }
 
     return (
         <div id ="header_div">
-            <div className="logo_div">
+            <div className="logo_div"  onClick={moveToMain}>
                 <img className="logoImg" alt="logo" src={Logo} />
+                <span className="logoText">PLANTINUS</span>
             </div>
+
             <div id="space_div"><span></span></div>
             <div id="btn_div"><button id="btn_moveToLogin" onClick ={LoginOrOut}>{buttonText}</button></div>
-            <div id="myPage_div" onClick={movemyPage}><img className="userIconImg" alt="logo" src={UserIcon} /></div>
+            <div id="myPage_div" onClick={moveToMyPage}><img className="userIconImg" alt="logo" src={UserIcon} /></div>
         </div>
     );
 }
