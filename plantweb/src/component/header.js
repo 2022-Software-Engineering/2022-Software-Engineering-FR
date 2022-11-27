@@ -24,7 +24,11 @@ export const Header = () => {
         }
     }
     const moveToMyPage =() => {
-        navigate('/myPage');
+        if(sessionStorage.getItem("userID")==null){
+            alert("로그인 후 이용 가능한 기능입니다")
+        }else{
+            navigate('/myPage');
+        }
     }
     const moveToMain =() => {
         navigate('/');

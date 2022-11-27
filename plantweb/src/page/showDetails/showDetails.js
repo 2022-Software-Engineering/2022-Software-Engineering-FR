@@ -11,11 +11,11 @@ export const ShowDetails=()=>{
     const [isLoaded, setIsLoaded]=useState(false);
     const [isResgisterd, setIsResgisterd]=useState("");
     const [isResgisterd_icon, setIsResgisterd_icon]=useState("♡");
-
-
+    
+    
     const navigate = useNavigate();
     const location = useLocation();
-
+    
     // useEffect(()=>{
     //     axios.get("localhose:8080",{
     //         plantId : location.state.plantId
@@ -46,7 +46,12 @@ export const ShowDetails=()=>{
     //     })
     // }
     const registerInterests=()=>{
-        alert("등록되었습니다."); setIsResgisterd_icon("♥");
+        
+        if(sessionStorage.getItem("userID")==null){
+            alert("로그인 후 이용 가능한 기능입니다")
+        }else{
+            alert("등록되었습니다."); setIsResgisterd_icon("♥");
+        }
     }
 
     
