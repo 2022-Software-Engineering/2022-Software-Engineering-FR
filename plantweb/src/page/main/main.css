@@ -2,6 +2,8 @@ table, td, th{
     border: 1px solid black;
     border-collapse: collapse;
     font-size: large;
+    /* margin: 5px; */
+    padding: 5px;
 }
 
 
@@ -24,14 +26,31 @@ hr{
     width: 1200px;
 }
 
+.serchTypeDropBox{
+    font-size: large;
+    font-weight: bold;
+
+}
+.search_div{
+    margin-left: 15px;
+}
+#searchWordInput{
+    height: 20px;
+    font-size: large;
+}
+#search_btn{
+    font-size: large;
+    margin-left: 5px;
+}
 p{
-    font-size:x-large;
+    font-size:large;
+    font-weight: bold;
     margin-bottom: 10px;
 }
 
 #searchList_div{
     position: absolute;
     left: 50%;
-    top: 46%;
+    top: 50%;
     transform: translate(-50%, -50%);
 }
