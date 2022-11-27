@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-export const MyPage = ()=>{
-    return(
-        <div>
-            마이페이지 입니다.
-        </div>
-    );
-}
-
-export default MyPage;
-=======
 import Header from "../../component/header";
 import ShowSearchList from "../../page/showSearchList/showSearchList";
 import { useState,useEffect } from "react";
@@ -70,4 +59,3 @@ export const MyPage=()=>{
 }
 
 export default MyPage;
->>>>>>> 94b91792a0dae0dc06b8c8669fbd18144c52869b

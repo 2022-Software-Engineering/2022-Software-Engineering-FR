@@ -9,23 +9,47 @@ export const ShowDetails=()=>{
 
     const [detailData, setDetailData]=useState([]);
     const [isLoaded, setIsLoaded]=useState(false);
+    const [isResgisterd, setIsResgisterd]=useState("");
+    const [isResgisterd_icon, setIsResgisterd_icon]=useState("♡");
+
 
     const navigate = useNavigate();
     const location = useLocation();
 
-    useEffect(()=>{
-        axios.get("localhose:8080",{
-            plantId : location.state.plantId
-        }).then(v=>{
+    // useEffect(()=>{
+    //     axios.get("localhose:8080",{
+    //         plantId : location.state.plantId
+    //     }).then(v=>{
             
-            setDetailData(v.data);
-            setIsLoaded(true);
-        },
-        e=>{
-            alert("서버 장애");
-        })
-    },[isLoaded])
+    //         setDetailData(v.data);
+    //         setIsLoaded(true);
+    //     },
+    //     e=>{
+    //         alert("서버 장애");
+    //     })
+    // },[isLoaded])
 
+    // const registerInterests=()=>{
+    //     axios.post("localhose:8080",{
+    //         userId : sessionStorage.getItem("userID"),
+    //         plantId : location.state.plantId
+    //     }).then(v=>{
+            
+    //         setIsResgisterd(v.data.returnCode);
+
+    //         if(isResgisterd=="NoneUser"){alert("사용자 정보가 존재하지 않습니다.")}
+    //         else if(isResgisterd=="DuplicatedData"){alert("이미 등록된 식물입니다.")}
+    //         else{alert("등록되었습니다."); setIsResgisterd_icon("♥");}
+    //     },
+    //     e=>{
+    //         alert("서버 장애");
+    //     })
+    // }
+    const registerInterests=()=>{
+        alert("등록되었습니다."); setIsResgisterd_icon("♥");
+    }
+
+    
 
 
     return (
@@ -137,7 +161,7 @@ export const ShowDetails=()=>{
                 </div>
             </div>
             <div className="buttonName">
-                <button>관심 등록<span>♡</span></button>
+                <button className="registerInterests_btn" onClick={registerInterests}>관심 등록<span className="icon_heart">{isResgisterd_icon}</span></button>
             </div>
         </div>
     );
