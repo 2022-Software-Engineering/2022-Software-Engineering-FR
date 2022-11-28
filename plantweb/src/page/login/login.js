@@ -1,7 +1,7 @@
 import { useNavigate,useLocation } from 'react-router-dom';
 import { useState } from "react";
 import axios from 'axios';
-import Logo from "../../images/Logo.png";
+import Logo from "../../images/Logo_login.png";
 import "./login.css"
 
 export const Login=()=>{
@@ -11,40 +11,35 @@ export const Login=()=>{
     const navigate = useNavigate();
     const location = useLocation();
 
-    // const Login = ()=>{
-
-    //     axios.post("localhost:8080/login",{
-    //         "userId":userID,
-    //         "password":password
-    //     }).then((v)=>{
-    //         if(v.data.isLogined == "Success"){
-    //             sessionStorage.setItem("userID",userID);
-    //             alert(userID+"님 환영합니다.");
-    //         }else{
-    //             alert("올바르지 않은 회원정보입니다.");
-    //         }
-    //     },
-    //     e =>{
-    //         alert("서버 장애");
-    //     })
-    // }
-
     const Login = ()=>{
 
         if(userID=="" | password=="") alert("회원정보를 입력 해 주세요")
         else{
-            sessionStorage.setItem("userID",userID);
-            alert(userID+"님 환영합니다.");
-            
-            // navigate("/");
-        }
 
+            axios.post("http://127.0.0.1:8000/Login",{
+                "userID": userID,
+                "password": password
+            }).then((v)=>{
+                if(v.data.isLogined == "Success"){
+                    sessionStorage.setItem("userID",userID);
+                    alert(userID+"님 환영합니다.");
+                    navigate("/");
+            }else{
+                alert("올바르지 않은 회원정보입니다.");
+            }
+        },
+            e =>{
+                console.log(e);
+                alert("서버 장애");
+            })
+        }   
     }
+
     
     return (
         <div id="para">
-            <div className="logo_div">
-                <img className="logoImg" alt="logo" src={Logo} />
+            <div className="logoLogin_div">
+                <img className="logoImg_login" alt="logo" src={Logo} />
                 덩그러니
             </div>
             <div className='login_div'>

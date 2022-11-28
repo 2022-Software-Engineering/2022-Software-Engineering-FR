@@ -1,4 +1,4 @@
-.logo_div{
+.logoLogin_div{
     position: absolute;
     width: 10%;
     height: 100%;
@@ -7,7 +7,7 @@
     left:42%;
 
 }
-.logoImg{
+.logoImg_login{
     width: 200px;
     display: inline-block;
 
