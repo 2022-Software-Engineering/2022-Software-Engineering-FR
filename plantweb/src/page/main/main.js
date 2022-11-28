@@ -16,13 +16,14 @@ export const Main=()=>{
     const handleSearchBtn =()=>{
         axios.get("http://127.0.0.1:8000/searchResultList",{
                 'searchType': searchType, 
+
                 'searchWord' : searchWord,
                 'growRate': growRate,
                 'manageLevel' : manageLevel ,
                 'manageDemand': manageDemand
         }).then(v=>{
-            console.log(v.data.returnCode)
-            // setSearchResult(v.data);
+
+            setSearchResult(v.data);
         },
         e=>{
             console.log(e);
