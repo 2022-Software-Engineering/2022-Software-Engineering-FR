@@ -27,6 +27,7 @@ export const Main=()=>{
             console.log(e);
             alert("서버 장애");
         })
+
     }
 
     
