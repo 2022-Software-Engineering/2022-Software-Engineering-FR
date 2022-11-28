@@ -3,8 +3,8 @@ import {useNavigate} from 'react-router-dom';
 
 
 export const SearchResult = (props) => {
+    console.log(props.plantID)
     const navigate = useNavigate();
-    console.log(props)
 
     const moveTodetailPage=()=>{
         navigate("/details",{

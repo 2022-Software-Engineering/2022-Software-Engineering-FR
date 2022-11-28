@@ -16,18 +16,23 @@ export const ShowDetails=()=>{
     const navigate = useNavigate();
     const location = useLocation();
     
-    // useEffect(()=>{
-    //     axios.get("localhose:8080",{
-    //         plantId : location.state.plantId
-    //     }).then(v=>{
+    useEffect(()=>{
+        axios.get("http://127.0.0.1:8000/plantDetails",{
+            params:{
+            plantId : location.state.plantId
+            }
+        }).then(v=>{
+            console.log(location.state.plantId)
+            // console.log(v.data)
             
-    //         setDetailData(v.data);
-    //         setIsLoaded(true);
-    //     },
-    //     e=>{
-    //         alert("서버 장애");
-    //     })
-    // },[isLoaded])
+            // setDetailData(v.data);
+            // setIsLoaded(true);
+        },
+        e=>{
+            alert("서버 장애");
+            console.log(e)
+        })
+    },[isLoaded])
 
     // const registerInterests=()=>{
     //     axios.post("localhose:8080",{
