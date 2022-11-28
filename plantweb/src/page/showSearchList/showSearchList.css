@@ -4,11 +4,11 @@
 
 ul{
     position: absolute;
-    /* top: -20%; */
-    left: 50%;
-    transform: translate(-50%, -15%);
+    /* top: %; */
+    left: 0%;
+    /* transform: translate(-50%, -0%); */
 }
 
 .resultTableUl_div{
-    top:555%
+    top:120%
 }

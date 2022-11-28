@@ -14,15 +14,19 @@ export const Main=()=>{
     const [searchResult,setSearchResult]=useState([]);
 
     const handleSearchBtn =()=>{
-        axios.get("http://127.0.0.1:8000/searchResultList",{
-                'searchType': searchType, 
-                'searchWord' : searchWord,
-                'growRate': growRate,
-                'manageLevel' : manageLevel ,
-                'manageDemand': manageDemand
-        }).then(v=>{
-            console.log(v.data.returnCode)
-            // setSearchResult(v.data);
+        axios.get("http://127.0.0.1:8000/searchResultList",{params:
+                {searchType: searchType ,
+                searchWord : searchWord,
+                growRate: growRate,
+                manageLevel : manageLevel ,
+                manageDemand: manageDemand}
+            }).then(v=>{
+                if(v.data.returnCode !=null) alert("만족하는 검색 결과가 존재하지 않습니다.");
+                else{
+                    setSearchResult(v.data);
+
+                }
+            console.log(v)
         },
         e=>{
             console.log(e);
