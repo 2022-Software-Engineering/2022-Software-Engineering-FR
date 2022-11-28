@@ -6,22 +6,23 @@ import "./main.css"
 
 export const Main=()=>{
     const [searchType,setSearchType]=useState("sCntntsSj");
-    const [searchWord,setSearchWord]=useState("");
-    const [growRate,setGrowRate]=useState("");
-    const [manageLevel,setManageLevel]=useState("");
-    const [manageDemand,setManageDemand]=useState("");
+    const [searchWord,setSearchWord]=useState('0');
+    const [growRate,setGrowRate]=useState('0');
+    const [manageLevel,setManageLevel]=useState('0');
+    const [manageDemand,setManageDemand]=useState('0');
 
     const [searchResult,setSearchResult]=useState([]);
 
     const handleSearchBtn =()=>{
         axios.get("http://127.0.0.1:8000/searchResultList",{
-                'searchType':searchType, 
+                'searchType': searchType, 
                 'searchWord' : searchWord,
                 'growRate': growRate,
                 'manageLevel' : manageLevel ,
                 'manageDemand': manageDemand
         }).then(v=>{
-            setSearchResult(v.data);
+            console.log(v.data.returnCode)
+            // setSearchResult(v.data);
         },
         e=>{
             console.log(e);
