@@ -12,9 +12,8 @@ export const Login=()=>{
     const location = useLocation();
 
     // const Login = ()=>{
-    //     console.log(userID);
-    //     console.log(password);
-    //     axios.get("localhost:8080/login",{
+
+    //     axios.post("localhost:8080/login",{
     //         "userId":userID,
     //         "password":password
     //     }).then((v)=>{
@@ -32,24 +31,37 @@ export const Login=()=>{
 
     const Login = ()=>{
 
-        sessionStorage.setItem("userID",userID);
-        alert(userID+"님 환영합니다.");
-        navigate("/");
+        if(userID=="" | password=="") alert("회원정보를 입력 해 주세요")
+        else{
+            sessionStorage.setItem("userID",userID);
+            alert(userID+"님 환영합니다.");
+            
+            // navigate("/");
+        }
+
     }
     
     return (
         <div id="para">
             <div className="logo_div">
-            <img className="logoImg" alt="logo" src={Logo} />
+                <img className="logoImg" alt="logo" src={Logo} />
+                덩그러니
             </div>
-            <div id="login_div">
-                <label from="id" id="id_label">ID </label>
-                <input type="text" id="id" onChange={(e)=>{setUserID(e.target.value)}}></input>
-                <br></br>
-                <label from="pw" id="pw_label">PW </label>
-                <input type="password" id="pw"onChange={(e)=>{setPW(e.target.value)}}></input>
-                <br></br>
-                <button id="login_btn" onClick={Login}>LOGIN</button>
+            <div className='login_div'>
+
+                <div id="login_input_div">
+                    <div className='inputId_div'>
+                        <label from="id" id="id_label">ID </label>
+                        <input type="text" id="id" onChange={(e)=>{setUserID(e.target.value)}}></input>
+                    </div>
+                    <div className='inputPW_div'>
+                        <label from="pw" id="pw_label">PW </label>
+                        <input type="password" id="pw"onChange={(e)=>{setPW(e.target.value)}}></input>
+                    </div>
+                </div>
+                <div className='loginBtn_div'>
+                    <button id="login_btn" onClick={Login}>LOGIN</button>
+                </div>
             </div>
         </div>
     );
