@@ -8,48 +8,50 @@ import { useEffect, useState } from "react";
 export const ShowDetails=()=>{
 
     const [detailData, setDetailData]=useState([]);
-    const [isLoaded, setIsLoaded]=useState(false);
+
     const [isResgisterd, setIsResgisterd]=useState("");
+    const [isLoaded, setIsLoaded]=useState(false);
     const [isResgisterd_icon, setIsResgisterd_icon]=useState("♡");
-
-
+    
+    
     const navigate = useNavigate();
-    const location = useLocation();
+    
+    useEffect(()=>{
+        axios.get("http://127.0.0.1:8000/plantDetails",{
+            params:{
+            plantID : sessionStorage.getItem("plantID")
+            }
+        }).then(v=>{
+            setIsLoaded(true);
+            setDetailData(v.data);
 
-    // useEffect(()=>{
-    //     axios.get("localhose:8080",{
-    //         plantId : location.state.plantId
-    //     }).then(v=>{
-            
-    //         setDetailData(v.data);
-    //         setIsLoaded(true);
-    //     },
-    //     e=>{
-    //         alert("서버 장애");
-    //     })
-    // },[isLoaded])
-
-    // const registerInterests=()=>{
-    //     axios.post("localhose:8080",{
-    //         userId : sessionStorage.getItem("userID"),
-    //         plantId : location.state.plantId
-    //     }).then(v=>{
-            
-    //         setIsResgisterd(v.data.returnCode);
-
-    //         if(isResgisterd=="NoneUser"){alert("사용자 정보가 존재하지 않습니다.")}
-    //         else if(isResgisterd=="DuplicatedData"){alert("이미 등록된 식물입니다.")}
-    //         else{alert("등록되었습니다."); setIsResgisterd_icon("♥");}
-    //     },
-    //     e=>{
-    //         alert("서버 장애");
-    //     })
-    // }
-    const registerInterests=()=>{
-        alert("등록되었습니다."); setIsResgisterd_icon("♥");
-    }
+        },
+        e=>{
+            alert("서버 장애");
+        })
+    },[isLoaded])
 
     
+    const registerInterests=()=>{
+        if(sessionStorage.getItem("userID")==null){
+            alert("로그인 후 이용 가능한 기능입니다")
+        }else{
+
+            axios.post("http://127.0.0.1:8000/registerInterest",{
+                userID : sessionStorage.getItem("userID"),
+                plantID : sessionStorage.getItem("plantID")
+            }).then(v=>{
+                
+                setIsResgisterd(v.data.returnCode);
+                if(isResgisterd=="NoneUser"){alert("사용자 정보가 존재하지 않습니다.")}
+                else if(isResgisterd=="DuplicatedData"){alert("이미 등록된 식물입니다.")}
+                else{alert(detailData.plantNameKR+"가 관심식물으로 등록되었습니다."); setIsResgisterd_icon("♥");}
+            },
+            e=>{
+                alert("서버 장애");
+            })
+        }
+    }
 
 
     return (

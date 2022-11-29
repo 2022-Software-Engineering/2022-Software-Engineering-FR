@@ -4,18 +4,19 @@ table, td, th{
 }
 
 #result_table{
-    width: 900px;
+    width: 1100px;
     height: 200px;
     text-align: center;
-}
+/* }
 
 th{
-    width: 200px;
+    /* width: 200px; */
 }
 
 td{
-    width: 700px;
-}
+    width: 900px;
+    font-size: xx-large;
+} */
 
 p{
     font-size:x-large;
