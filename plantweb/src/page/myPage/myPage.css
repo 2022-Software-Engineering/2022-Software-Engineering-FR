@@ -8,7 +8,7 @@ table, td, th{
 #interestList_div{
     position: absolute;
     left: 50%;
-    top: 35%;
+    top: 30%;
     transform: translate(-50%, -50%);
 }
 
@@ -19,7 +19,11 @@ hr{
     background: black;
 }
 
-p{
-    font-size:x-large;
+.title_div{
+    margin-left: 20%;
+}
+.myPageTitle{
+    font-size:xx-large;
     margin-bottom: 10px;
+    font-weight: bolder;
 }

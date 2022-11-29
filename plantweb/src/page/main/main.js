@@ -5,51 +5,38 @@ import axios from "axios";
 import "./main.css"
 
 export const Main=()=>{
-    const [searchType,setSearchType]=useState("");
-    const [searchWord,setSearchWord]=useState("");
-    const [growRate,setGrowRate]=useState("");
-    const [manageLevel,setManageLevel]=useState("");
-    const [manageDemand,setManageDemand]=useState("");
+    const [searchType,setSearchType]=useState("sCntntsSj");
+    const [searchWord,setSearchWord]=useState('0');
+    const [growRate,setGrowRate]=useState('0');
+    const [manageLevel,setManageLevel]=useState('0');
+    const [manageDemand,setManageDemand]=useState('0');
 
     const [searchResult,setSearchResult]=useState([]);
 
-    // const handleSearchBtn =()=>{
-    //     axios.get("localhose:8080",{
-    //             'searchType':searchType, 
-    //             'searchWord' : searchWord,
-    //             'growRate': growRate,
-    //             'manageLevel' : manageLevel ,
-    //             'manageDemand': manageDemand
-    //     }).then(v=>{
-    //         setSearchResult(v.data);
-    //     },
-    //     e=>{
-    //         alert("서버 장애");
-    //     })
-    // }
-
     const handleSearchBtn =()=>{
-        setSearchResult([
-            {
-                "plantID": "204870",
-                "plantNameKR": "페페로미아 그라베올렌스",
-                "plantNameEN": "<i>Peperomia graveolens</i>",
-                "plantImgUrl": "http://www.nongsaro.go.kr/cms_contents/1122/204870_MF_BIMG_01.jpg"
-            },
-            {
-                "plantID": "204865",
-                "plantNameKR": "사마로",
-                "plantNameEN": "<i>Sinocrassula yunnanensis</i>",
-                "plantImgUrl": "http://www.nongsaro.go.kr/cms_contents/1122/204865_MF_BIMG_01.jpg"
-            },
-            {
-                "plantID": "204858",
-                "plantNameKR": "자보",
-                "plantNameEN": "<i>Gasteria gracilis</i> var. <i>minima</i>",
-                "plantImgUrl": "http://www.nongsaro.go.kr/cms_contents/1122/204858_MF_BIMG_01.jpg"
-            }
-        ]);
+        axios.get("http://127.0.0.1:8000/searchResultList",{params:
+                {searchType: searchType ,
+                searchWord : searchWord,
+                growRate: growRate,
+                manageLevel : manageLevel ,
+                manageDemand: manageDemand}
+            }).then(v=>{
+                if(v.data.returnCode !=null) alert("만족하는 검색 결과가 존재하지 않습니다.");
+                else{
+                    setSearchResult(v.data);
+
+                }
+            console.log(v)
+
+        },
+        e=>{
+            console.log(e);
+            alert("서버 장애");
+        })
+
     }
+
+    
 
     return (
         <div>
@@ -58,20 +45,23 @@ export const Main=()=>{
             </div>
 
             <div id="search_div">
-                <p>검색</p>
+                <p>검색 🔍</p>
                 <hr></hr>
                 <br></br>
                 <table id="search_table">
                     <tr>
                         <th>
-                            <select name="searchType" onChange={(e)=>setSearchType(e.target.value)}>
+                            <select name="searchType" onChange={(e)=>setSearchType(e.target.value)} className="serchTypeDropBox">
                                 <option value="sCntntsSj">식물명(한국어)</option>
                                 <option value="sScnm">식물명(영어)</option>
                             </select>
                         </th>
                         <td>
-                            <input type="text" name="searchWord" id="searchWord" onChange={(e)=>setSearchWord(e.target.value)}></input>
-                            <input type="button" name="search_btn" id="search_btn" value="검색" onClick={handleSearchBtn}></input>
+                            <div className="search_div">
+                                <input type="text" name="searchWord" id="searchWordInput" onChange={(e)=>setSearchWord(e.target.value)}></input>
+                                <input type="button" name="search_btn" id="search_btn" value="검색" onClick={handleSearchBtn}></input>
+
+                            </div>
                         </td>
                     </tr>
 

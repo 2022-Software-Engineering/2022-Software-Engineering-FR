@@ -1,19 +1,26 @@
-.logo_div{
+.logoLogin_div{
+    position: absolute;
     width: 10%;
     height: 100%;
     text-align: center;
-    float: left;
+    top:30%;
+    left:42%;
+
 }
-.logoImg{
-    width: 100px;
-    height: 100px;
+.logoImg_login{
+    width: 200px;
     display: inline-block;
+
+}
+.login_div{
+    top: 60%;
+    
 }
 
-#login_div{
+#login_input_div{
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 60%;
     transform: translate(-50%, -50%);
 
 }
@@ -32,16 +39,23 @@
 }
 
 #login_btn{
-    width: 200px;
-    height: 50px;
+    width: 120px;
+    height: 120px;
     margin: 20px;
+    margin-left: 40px;
     font-size: 25pt;
     position: absolute;
-    left: 50%;
-    top: 120%;
-    transform: translate(-50%, -50%);
+    left: 58%;
+    top: 52.5%;
+    background-color: white;
+    
 }
-
+#login_btn:hover{
+    background-color: lightgray;
+    color: white;
+    width: 130px;
+    height: 130px;
+}
 #para{
     margin: 20px;
 }

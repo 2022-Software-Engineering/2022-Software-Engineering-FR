@@ -8,26 +8,30 @@ import { useEffect, useState } from "react";
 export const ShowDetails=()=>{
 
     const [detailData, setDetailData]=useState([]);
-    const [isLoaded, setIsLoaded]=useState(false);
+    const [checkPlantID, setCheckPlantID]=useState("");
     const [isResgisterd, setIsResgisterd]=useState("");
     const [isResgisterd_icon, setIsResgisterd_icon]=useState("♡");
-
-
+    
+    
     const navigate = useNavigate();
     const location = useLocation();
-
-    // useEffect(()=>{
-    //     axios.get("localhose:8080",{
-    //         plantId : location.state.plantId
-    //     }).then(v=>{
+    
+    useEffect(()=>{
+        setCheckPlantID(location.state.plantId);
+        console.log(checkPlantID);
+        axios.get("http://127.0.0.1:8000/plantDetails",{
+            params:{
+            plantId : checkPlantID
+            }
+        }).then(v=>{
             
-    //         setDetailData(v.data);
-    //         setIsLoaded(true);
-    //     },
-    //     e=>{
-    //         alert("서버 장애");
-    //     })
-    // },[isLoaded])
+            // setDetailData(v.data);
+        },
+        e=>{
+            alert("서버 장애");
+            console.log(e)
+        })
+    },[checkPlantID])
 
     // const registerInterests=()=>{
     //     axios.post("localhose:8080",{
@@ -46,7 +50,12 @@ export const ShowDetails=()=>{
     //     })
     // }
     const registerInterests=()=>{
-        alert("등록되었습니다."); setIsResgisterd_icon("♥");
+        
+        if(sessionStorage.getItem("userID")==null){
+            alert("로그인 후 이용 가능한 기능입니다")
+        }else{
+            alert("등록되었습니다."); setIsResgisterd_icon("♥");
+        }
     }
 
     

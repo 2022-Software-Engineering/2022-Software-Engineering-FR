@@ -18,7 +18,7 @@ export const SearchResult = (props) => {
             <li>
                 <table id="result_table">
                     <tr onClick={moveTodetailPage}>
-                        <th><img src={props.plantImgUrl}></img></th>
+                        <td><img src={props.plantImgUrl}></img></td>
                         <td>{props.plantNameKR} / <i>{props.plantNameEN}</i></td>
                     </tr>
                 </table>
