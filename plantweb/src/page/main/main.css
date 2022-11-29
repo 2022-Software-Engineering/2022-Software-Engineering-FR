@@ -2,7 +2,6 @@ table, td, th{
     border: 1px solid black;
     border-collapse: collapse;
     font-size: large;
-    /* margin: 5px; */
     padding: 5px;
 }
 
