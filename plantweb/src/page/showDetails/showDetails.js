@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 export const ShowDetails=()=>{
 
     const [detailData, setDetailData]=useState([]);
+
     const [isResgisterd, setIsResgisterd]=useState("");
     const [isLoaded, setIsLoaded]=useState(false);
     const [isResgisterd_icon, setIsResgisterd_icon]=useState("♡");
@@ -16,6 +17,8 @@ export const ShowDetails=()=>{
     const navigate = useNavigate();
     
     useEffect(()=>{
+        setCheckPlantID(location.state.plantId);
+        console.log(checkPlantID);
         axios.get("http://127.0.0.1:8000/plantDetails",{
             params:{
             plantID : sessionStorage.getItem("plantID")
@@ -23,12 +26,13 @@ export const ShowDetails=()=>{
         }).then(v=>{
             setIsLoaded(true);
             setDetailData(v.data);
+
         },
         e=>{
             alert("서버 장애");
             console.log(e)
         })
-    },[isLoaded])
+    },[checkPlantID])
 
     
     const registerInterests=()=>{
