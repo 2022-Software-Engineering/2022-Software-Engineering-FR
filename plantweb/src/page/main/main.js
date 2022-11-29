@@ -26,7 +26,6 @@ export const Main=()=>{
                     setSearchResult(v.data);
 
                 }
-            console.log(v)
 
         },
         e=>{
