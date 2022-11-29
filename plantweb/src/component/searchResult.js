@@ -6,11 +6,8 @@ export const SearchResult = (props) => {
     const navigate = useNavigate();
 
     const moveTodetailPage=()=>{
-        navigate("/details",{
-            state: {
-                plantID : props.plantID
-            }
-        });
+        sessionStorage.setItem("plantID",props.plantID)
+        navigate("/details");
     }
 
     return (

@@ -9,7 +9,7 @@ export const ShowDetails=()=>{
 
     const [detailData, setDetailData]=useState([]);
     const [checkPlantID, setCheckPlantID]=useState("");
-    const [isResgisterd, setIsResgisterd]=useState("");
+    const [isLoaded, setIsLoaded]=useState(false);
     const [isResgisterd_icon, setIsResgisterd_icon]=useState("♡");
     
     
@@ -17,21 +17,19 @@ export const ShowDetails=()=>{
     const location = useLocation();
     
     useEffect(()=>{
-        setCheckPlantID(location.state.plantId);
-        console.log(checkPlantID);
         axios.get("http://127.0.0.1:8000/plantDetails",{
             params:{
-            plantId : checkPlantID
+            plantID : sessionStorage.getItem("plantID")
             }
         }).then(v=>{
-            
-            // setDetailData(v.data);
+            setIsLoaded(true);
+            setDetailData(v.data);
         },
         e=>{
             alert("서버 장애");
             console.log(e)
         })
-    },[checkPlantID])
+    },[isLoaded])
 
     // const registerInterests=()=>{
     //     axios.post("localhose:8080",{
