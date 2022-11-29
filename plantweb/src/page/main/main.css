@@ -2,8 +2,7 @@ table, td, th{
     border: 1px solid black;
     border-collapse: collapse;
     font-size: large;
-    /* margin: 5px; */
-    padding: 5px;
+    padding: 7px;
 }
 
 
@@ -17,10 +16,12 @@ table, td, th{
 hr{
     width: 1200px;
     border: 0;
-    height: 2px;
-    background: black;
+    height: 1px;
+    border-color: rgb(150, 189, 150);
 }
-
+.search_text{
+    color: rgb(9, 78, 9);
+}
 #search_table{
     width: 1200px;
 }
@@ -40,6 +41,15 @@ hr{
 #search_btn{
     font-size: large;
     margin-left: 5px;
+    box-shadow: 0px 2px 0px 0px #1E8185;
+    background: white;
+    color: rgb(9, 78, 9);
+    border-color: rgb(228, 226, 226);
+    border-radius: 5px;
+}
+#search_btn:hover{
+    box-shadow: 0px 0px 0px 0px #007144;
+    
 }
 p{
     font-size:large;
@@ -53,3 +63,28 @@ p{
     top: 50%;
     transform: translate(-50%, -50%);
 }
+[type="radio"] {
+    vertical-align: middle;
+    appearance: none;
+    border: max(2px, 0.1em) solid gray;
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+    transition: border 0.5s ease-in-out;
+  }
+  
+  [type="radio"]:checked {
+    border: 0.4em solid green;
+  }
+  
+  [type="radio"]:focus-visible {
+    outline-offset: max(2px, 0.1em);
+    outline: max(2px, 0.1em) dotted green;
+  }
+  
+  [type="radio"]:hover {
+    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+    cursor: pointer;
+  }
+  
+ 

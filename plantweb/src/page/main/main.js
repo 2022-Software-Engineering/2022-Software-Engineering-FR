@@ -44,7 +44,7 @@ export const Main=()=>{
             </div>
 
             <div id="search_div">
-                <p>검색 🔍</p>
+                <p className="search_text">검색 🪴</p>
                 <hr></hr>
                 <br></br>
                 <table id="search_table">
@@ -58,7 +58,7 @@ export const Main=()=>{
                         <td>
                             <div className="search_div">
                                 <input type="text" name="searchWord" id="searchWordInput" onChange={(e)=>setSearchWord(e.target.value)}></input>
-                                <input type="button" name="search_btn" id="search_btn" value="검색" onClick={handleSearchBtn}></input>
+                                <input type="button" name="search_btn" id="search_btn" value="🔍" onClick={handleSearchBtn}></input>
 
                             </div>
                         </td>
@@ -69,12 +69,18 @@ export const Main=()=>{
                             <strong>생장속도</strong>
                         </th>
                         <td>
-                            <input type="radio" name="growRate" id="growRate_slow" value="407001" onClick={(e)=>setGrowRate(e.target.value)}></input>
-                            <label from="growRate_slow">느림  </label>
-                            <input type="radio" name="growRate" id="growRate_common" value="407002" onClick={(e)=>setGrowRate(e.target.value)}></input>
-                            <label from="growRate_common">보통  </label>
-                            <input type="radio" name="growRate" id="growRate_fast" value="407003" onClick={(e)=>setGrowRate(e.target.value)}></input>
-                            <label from="growRate_fast">빠름  </label>
+                            <label from="growRate_slow">
+                                <input type="radio" name="growRate" id="growRate_slow" value="407001" onClick={(e)=>setGrowRate(e.target.value)}></input>
+                                <span> 느림 </span>  
+                            </label>
+                            <label from="growRate_common">
+                                <input type="radio" name="growRate" id="growRate_common" value="407002" onClick={(e)=>setGrowRate(e.target.value)}></input>
+                                <span> 보통 </span>  
+                            </label>
+                            <label from="growRate_fast">
+                                <input type="radio" name="growRate" id="growRate_fast" value="407003" onClick={(e)=>setGrowRate(e.target.value)}></input>
+                                <span> 빠름 </span>  
+                            </label>
                         </td>
                     </tr>
 
@@ -83,16 +89,26 @@ export const Main=()=>{
                             <strong>관리수준</strong>
                         </th>
                         <td>
-                            <input type="radio" name="manageLevel" id="manageLevel_very_easy" value="408001"  onClick={(e)=>setManageLevel(e.target.value)}></input>
-                            <label from="manageLevel_very_easy">매우 쉬움  </label>
-                            <input type="radio" name="manageLevel" id="manageLevel_easy" value="408004" onClick={(e)=>setManageLevel(e.target.value)}></input>
-                            <label from="manageLevel_easy">쉬움  </label>
-                            <input type="radio" name="manageLevel" id="manageLevel_common" value="408003" onClick={(e)=>setManageLevel(e.target.value)}></input>
-                            <label from="manageLevel_common">보통  </label>
-                            <input type="radio" name="manageLevel" id="manageLevel_difficulty" value="408005" onClick={(e)=>setManageLevel(e.target.value)}></input>
-                            <label from="manageLevel_difficulty">어려움  </label>
-                            <input type="radio" name="manageLevel" id="manageLevel_very_difficulty" value="408002" onClick={(e)=>setManageLevel(e.target.value)}></input>
-                            <label from="manageLevel_very_difficulty">매우 어려움  </label>
+                            <label from="manageLevel_very_easy">
+                                <input type="radio" name="manageLevel" id="manageLevel_very_easy" value="408001"  onClick={(e)=>setManageLevel(e.target.value)}></input>
+                                <span> 매우 쉬움 </span>
+                            </label>
+                            <label from="manageLevel_easy">
+                                <input type="radio" name="manageLevel" id="manageLevel_easy" value="408004" onClick={(e)=>setManageLevel(e.target.value)}></input>
+                                <span> 쉬움 </span>
+                            </label>
+                            <label from="manageLevel_common">
+                                <input type="radio" name="manageLevel" id="manageLevel_common" value="408003" onClick={(e)=>setManageLevel(e.target.value)}></input>
+                                <span> 보통 </span>  
+                            </label>
+                            <label from="manageLevel_difficulty">
+                                <input type="radio" name="manageLevel" id="manageLevel_difficulty" value="408005" onClick={(e)=>setManageLevel(e.target.value)}></input>
+                                <span> 어려움 </span>  
+                            </label>
+                            <label from="manageLevel_very_difficulty">
+                                <input type="radio" name="manageLevel" id="manageLevel_very_difficulty" value="408002" onClick={(e)=>setManageLevel(e.target.value)}></input>
+                                <span> 매우 어려움 </span>  
+                            </label>
                         </td>
                     </tr>
 
@@ -101,12 +117,18 @@ export const Main=()=>{
                             <strong>관리요구도</strong>
                         </th>
                         <td>
-                            <input type="radio" name="manageDemand" id="manageDemand_low" value="409001" onClick={(e)=>setManageDemand(e.target.value)}></input>
-                            <label from="manageDemand_low">약간 돌봄  </label>
-                            <input type="radio" name="manageDemand" id="manageDemand_middle" value="409002" onClick={(e)=>setManageDemand(e.target.value)}></input>
-                            <label from="manageDemand_middle">잘 견딤  </label>
-                            <input type="radio" name="manageDemand" id="manageDemand_high" value="409003" onClick={(e)=>setManageDemand(e.target.value)}></input>
-                            <label from="manageDemand_high">필요함  </label>
+                            <label from="manageDemand_low">
+                                <input type="radio" name="manageDemand" id="manageDemand_low" value="409001" onClick={(e)=>setManageDemand(e.target.value)}></input>
+                                <span> 약간 돌봄 </span> 
+                            </label>
+                            <label from="manageDemand_middle">
+                                <input type="radio" name="manageDemand" id="manageDemand_middle" value="409002" onClick={(e)=>setManageDemand(e.target.value)}></input>
+                                <span> 잘 견딤 </span> 
+                            </label>
+                            <label from="manageDemand_high">
+                                <input type="radio" name="manageDemand" id="manageDemand_high" value="409003" onClick={(e)=>setManageDemand(e.target.value)}></input>
+                                <span> 필요함 </span>  
+                            </label>
                         </td>
                     </tr>
                 </table>

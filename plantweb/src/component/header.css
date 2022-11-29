@@ -58,19 +58,18 @@
 #btn_moveToLogin{
     background-color: white;
     color: rgb(9, 78, 9);
-    border: 2px rgb(9, 78, 9) solid;
     height: 60px;
     width: 120px;
     font-size: x-large;
     margin-right: 10px;
     border-radius: 15px;
     text-align: center;
+    border-color: rgb(224, 238, 224);
 }
 #btn_moveToLogin:hover{
-    /* height: 65px;
-    width: 130px; */
     box-shadow: 0 0 20px rgb(224, 238, 224);
     transform: translateY(-5px);
+    
 }
 #myPage_div{
     width: 8%;
