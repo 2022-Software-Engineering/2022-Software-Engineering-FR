@@ -10,7 +10,7 @@ export const MyPage=()=>{
     const [isLoaded,setIsloaded] = useState(false);
 
     useEffect(()=>{
-        axios.post("http://127.0.0.1:8000/interestPlantList",{
+        axios.post("https://plantinus.herokuapp.com/interestPlantList",{
                 'userID':sessionStorage.getItem("userID")
         }).then(v=>{
             setSearchResult(v.data);

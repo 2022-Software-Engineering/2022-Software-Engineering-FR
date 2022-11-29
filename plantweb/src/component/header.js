@@ -20,6 +20,8 @@ export const Header = () => {
         if(buttonText=="LOGIN"){
             navigate('/login');
         }else{
+            alert("로그아웃 되셨습니다.")
+            setButtonText("LOGIN");
             sessionStorage.clear();
         }
     }
@@ -36,10 +38,15 @@ export const Header = () => {
 
     return (
         <div id ="header_div">
-            <div className="logo_div"  onClick={moveToMain}>
-                <img className="logoImg_header" alt="logo" src={Logo} />
-                <span className="logoText">PLANTINUS</span>
+            <div className='logo_div'  onClick={moveToMain}>
+                <div className="logoImg_div">
+                    <img className="logoImg_header" alt="logo" src={Logo} />
+                </div>
+                <div className="logoText_div">
+                    <span className="logoText">PLANTINUS</span>
+                </div>
             </div>
+
 
             <div id="space_div"><span></span></div>
             <div id="btn_div"><button id="btn_moveToLogin" onClick ={LoginOrOut}>{buttonText}</button></div>

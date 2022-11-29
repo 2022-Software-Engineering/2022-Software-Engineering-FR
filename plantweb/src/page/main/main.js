@@ -14,7 +14,7 @@ export const Main=()=>{
     const [searchResult,setSearchResult]=useState([]);
 
     const handleSearchBtn =()=>{
-        axios.get("http://127.0.0.1:8000/searchResultList",{params:
+        axios.get("https://plantinus.herokuapp.com/searchResultList",{params:
                 {searchType: searchType ,
                 searchWord : searchWord,
                 growRate: growRate,

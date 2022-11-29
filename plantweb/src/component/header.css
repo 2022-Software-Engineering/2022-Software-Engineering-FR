@@ -5,20 +5,24 @@
     height: 100px;
 }
 .logo_div{
-    margin-left: 100px;
+    margin-left: 15%;
     /* width: 100px; */
-    height: 100%;
     text-align: center;
     float: left;
 }
+.logoImg_div{
+    height: 100%;
+    
+}
 .logoImg_header{
     display: inline-block;
-    height: 120%;
+    height: 100%;
+    width: 100px;
 }
 
 .logoText{
     font-size: x-large;
-    color: rgb(2, 53, 2);
+    color: rgb(9, 78, 9);
     /* float: left; */
 
 }

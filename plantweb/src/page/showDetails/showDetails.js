@@ -17,7 +17,7 @@ export const ShowDetails=()=>{
     const navigate = useNavigate();
     
     useEffect(()=>{
-        axios.get("http://127.0.0.1:8000/plantDetails",{
+        axios.get("https://plantinus.herokuapp.com/plantDetails",{
             params:{
             plantID : sessionStorage.getItem("plantID")
             }
@@ -37,7 +37,7 @@ export const ShowDetails=()=>{
             alert("로그인 후 이용 가능한 기능입니다")
         }else{
 
-            axios.post("http://127.0.0.1:8000/registerInterest",{
+            axios.post("https://plantinus.herokuapp.com/registerInterest",{
                 userID : sessionStorage.getItem("userID"),
                 plantID : sessionStorage.getItem("plantID")
             }).then(v=>{

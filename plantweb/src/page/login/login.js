@@ -16,7 +16,7 @@ export const Login=()=>{
         if(userID=="" | password=="") alert("회원정보를 입력 해 주세요")
         else{
 
-            axios.post("http://127.0.0.1:8000/Login",{
+            axios.post("https://plantinus.herokuapp.com/Login",{
                 "userID": userID,
                 "password": password
             }).then((v)=>{
