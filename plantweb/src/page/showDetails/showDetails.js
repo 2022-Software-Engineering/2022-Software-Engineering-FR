@@ -74,17 +74,16 @@ export const ShowDetails=()=>{
                     </div>
 
                     <div>
-
                         <table id="details_table">
                             <tbody>
                                 <tr>
                                     <th><strong>식물 한글명</strong></th>
-                                    <td> {detailData.plantNameKR}</td>
+                                    <td> 🍀{detailData.plantNameKR}</td>
                                 </tr>
 
                                 <tr>
                                     <th> <strong>식물 영어명</strong></th>
-                                    <td>{detailData.plantNameEN} </td>
+                                    <td>☘️ {detailData.plantNameEN} </td>
                                 </tr>
 
                                 <tr>
@@ -99,12 +98,7 @@ export const ShowDetails=()=>{
 
                                 <tr>
                                     <th><strong>꽃</strong></th>
-                                    <td> {detailData.flowerExist}</td>
-                                </tr>
-
-                                <tr>
-                                    <th><strong>식물명</strong></th>
-                                    <td> {detailData.plantName}</td>
+                                    <td>  🌸 {detailData.flowerExist}</td>
                                 </tr>
 
                                 <tr>
@@ -119,7 +113,7 @@ export const ShowDetails=()=>{
 
                                 <tr>
                                     <th><strong>광</strong></th>
-                                    <td> {detailData.lightAmount}</td>
+                                    <td> 🌟 {detailData.lightAmount}</td>
                                 </tr>
 
                                 <tr>
