@@ -8,6 +8,10 @@ export const SearchResult = (props) => {
     const moveTodetailPage=()=>{
         sessionStorage.setItem("plantID",props.plantID)
         navigate("/details");
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
     }
 
     return (
