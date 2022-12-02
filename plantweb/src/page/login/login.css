@@ -48,13 +48,16 @@
     left: 58%;
     top: 50%;
     background-color: white;
+    color: rgb(9, 78, 9);
+    border-radius: 15px;
+    text-align: center;
+    border-color: rgb(224, 238, 224);
     
 }
 #login_btn:hover{
-    background-color: lightgray;
-    color: white;
-    width: 130px;
-    height: 130px;
+    box-shadow: 0 0 20px rgb(224, 238, 224);
+    transform: translateY(-5px);
+    
 }
 #para{
     margin: 20px;
