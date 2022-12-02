@@ -23,6 +23,8 @@ export const Header = () => {
             alert("로그아웃 되셨습니다.")
             setButtonText("LOGIN");
             sessionStorage.clear();
+            navigate('/');
+
         }
     }
     const moveToMyPage =() => {

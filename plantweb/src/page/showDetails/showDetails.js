@@ -59,18 +59,18 @@ export const ShowDetails=()=>{
             <Header></Header>
 
             <div id="details_div">
-                <div>
-                    <div><span>사진</span></div>
-                    <div><hr></hr></div>
-                    <div>
-                        <img src={detailData.plantImgUrl}></img>
+                <div id="plantImg_div">
+                    <div><p>사진</p></div>
+                    <div><hr className="detailPage_hr"></hr></div>
+                    <div id="img_div">
+                        <img id="detail_img" src={detailData.plantImgUrl}></img>
                     </div>
                 </div>
 
-                <div>
+                <div id="plantingInfo_div">
                     <div>
                         <p>재배정보</p>
-                        <hr></hr>
+                        <hr className="detailPage_hr"></hr>
                     </div>
 
                     <div>
@@ -154,10 +154,10 @@ export const ShowDetails=()=>{
                         </table>
                     </div>
 
+                    <div className="registerBtn_div">
+                        <button className="registerInterests_btn" onClick={registerInterests}>관심 등록<span className="icon_heart">{isResgisterd_icon}</span></button>
+                    </div>
                 </div>
-            </div>
-            <div className="buttonName">
-                <button className="registerInterests_btn" onClick={registerInterests}>관심 등록<span className="icon_heart">{isResgisterd_icon}</span></button>
             </div>
         </div>
     );

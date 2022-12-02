@@ -3,10 +3,42 @@ table, td, th{
     border-collapse: collapse;
 }
 
+#details_div{
+    width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+}
 #details_table{
     width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+#img_div{
+    margin-left: 3%;
+
+}
+.detailPage_hr{
+    width: 950px;
+}
+
+#plantImg_div{
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+}
+
+#plantingInfo_div{
+    margin-top: 320px;
+    left: 50%;
+}
+
+p{
+    font-size:large;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 th{
     width: 250px;
 }
@@ -19,17 +51,26 @@ p{
     font-size:x-large;
     margin-bottom: 10px;
 }
-.buttonName{
+
+.registerBtn_div{
     margin-top: 30px;
+    margin-left: 750px;
     
 }
+
 .registerInterests_btn{
-    width: 200px;
+    width: 170px;
     height: 50px;
-    font-size: x-large;
-    /* font-weight: bold; */
+    font-size: 16pt;
     background-color: white;
-    color: black;
+    color: rgb(9, 78, 9);
+    border-radius: 15px;
+    border-color: rgb(224, 238, 224);
+}
+
+.registerInterests_btn:hover{
+    box-shadow: 0 0 20px rgb(224, 238, 224);
+    transform: translateY(-5px);
 }
 .icon_heart{
     color: red;

@@ -29,14 +29,11 @@ export const MyPage=()=>{
                 <Header></Header>
             </div>
 
-            <div className="title_div">
-                <p className="myPageTitle">{sessionStorage.getItem("userID")} 님의 관심 식물 리스트</p>
-                {/* <input type="button" value="결과리스트보이기" onClick={handleSearchBtn}></input> */}
-            </div>
-            <div><br></br></div> 
-            <div id="interestList_div">
+            <div id="interest_div">
+                    <p className="myPageTitle">🌱 {sessionStorage.getItem("userID")} 님의 관심 식물 리스트 🌱</p>
+                    <hr></hr>
                 
-                <ShowSearchList data ={searchResult} ></ShowSearchList>
+                    <ShowSearchList data ={searchResult} ></ShowSearchList>
             </div>
         </div>
     );

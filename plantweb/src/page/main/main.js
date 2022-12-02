@@ -33,15 +33,14 @@ export const Main=()=>{
             alert("서버 장애");
         })
 
+        document.getElementById("searchList_div").style.display = "inline-block";
     }
 
     
 
     return (
         <div>
-            <div id="header_div">
-                <Header></Header>
-            </div>
+            <Header></Header>
 
             <div id="search_div">
                 <p className="search_text">검색 🪴</p>
@@ -50,7 +49,7 @@ export const Main=()=>{
                 <table id="search_table">
                     <tr>
                         <th>
-                            <select name="searchType" onChange={(e)=>setSearchType(e.target.value)} className="serchTypeDropBox">
+                            <select name="searchType" onChange={(e)=>setSearchType(e.target.value)} className="searchTypeDropBox">
                                 <option value="sCntntsSj">식물명(한국어)</option>
                                 <option value="sScnm">식물명(영어)</option>
                             </select>
@@ -133,7 +132,12 @@ export const Main=()=>{
                     </tr>
                 </table>
             </div>
+            <div id="span_div"><span></span></div>
             <div id="searchList_div">
+                
+                    <p className="title_text">결과 🌱 </p>
+                    <hr></hr>
+                
                 <ShowSearchList data ={searchResult} ></ShowSearchList>
             </div>
 

@@ -1,11 +1,11 @@
 .logoLogin_div{
-    position: absolute;
     width: 10%;
     height: 100%;
     text-align: center;
-    top:30%;
-    left:42%;
-
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    transform: translate(-50%, -50%);
 }
 .logoImg_login{
     width: 200px;
@@ -19,7 +19,7 @@
 
 #login_input_div{
     position: absolute;
-    left: 50%;
+    left: 46%;
     top: 60%;
     transform: translate(-50%, -50%);
 
@@ -46,7 +46,7 @@
     font-size: 25pt;
     position: absolute;
     left: 58%;
-    top: 52.5%;
+    top: 50%;
     background-color: white;
     
 }

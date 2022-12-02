@@ -5,7 +5,7 @@
     height: 100px;
 }
 .logo_div{
-    margin-left: 15%;
+    margin-left: 11%;
     
     width: 110px;
     text-align: center;
@@ -69,8 +69,8 @@
 #btn_moveToLogin:hover{
     box-shadow: 0 0 20px rgb(224, 238, 224);
     transform: translateY(-5px);
-    
 }
+
 #myPage_div{
     width: 8%;
     height: 100%;

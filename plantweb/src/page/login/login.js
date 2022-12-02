@@ -40,7 +40,6 @@ export const Login=()=>{
         <div id="para">
             <div className="logoLogin_div">
                 <img className="logoImg_login" alt="logo" src={Logo} />
-                덩그러니
             </div>
             <div className='login_div'>
 
